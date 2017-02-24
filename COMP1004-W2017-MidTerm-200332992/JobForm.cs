@@ -28,5 +28,13 @@ namespace COMP1004_W2017_MidTerm_200332992
         {
             InitializeComponent();
         }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            FinalForm finalForm = new FinalForm();
+            finalForm.PreviousForm = this;
+            this.Hide();
+            finalForm.Show();
+        }
     }
 }

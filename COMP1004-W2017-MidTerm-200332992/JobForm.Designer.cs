@@ -30,10 +30,10 @@
         {
             this.NextButton = new System.Windows.Forms.Button();
             this.JobGroupBox = new System.Windows.Forms.GroupBox();
-            this.SoldierRadioButton = new System.Windows.Forms.RadioButton();
-            this.RogueRadioButton = new System.Windows.Forms.RadioButton();
-            this.MagickerRadioButton = new System.Windows.Forms.RadioButton();
             this.CultistRadioButton = new System.Windows.Forms.RadioButton();
+            this.MagickerRadioButton = new System.Windows.Forms.RadioButton();
+            this.RogueRadioButton = new System.Windows.Forms.RadioButton();
+            this.SoldierRadioButton = new System.Windows.Forms.RadioButton();
             this.HealthPointsLabel = new System.Windows.Forms.Label();
             this.JobGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,7 @@
             this.NextButton.TabIndex = 3;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // JobGroupBox
             // 
@@ -62,27 +63,16 @@
             this.JobGroupBox.TabStop = false;
             this.JobGroupBox.Text = "Job";
             // 
-            // SoldierRadioButton
+            // CultistRadioButton
             // 
-            this.SoldierRadioButton.AutoSize = true;
-            this.SoldierRadioButton.Location = new System.Drawing.Point(7, 36);
-            this.SoldierRadioButton.Name = "SoldierRadioButton";
-            this.SoldierRadioButton.Size = new System.Drawing.Size(87, 28);
-            this.SoldierRadioButton.TabIndex = 0;
-            this.SoldierRadioButton.TabStop = true;
-            this.SoldierRadioButton.Text = "Soldier";
-            this.SoldierRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // RogueRadioButton
-            // 
-            this.RogueRadioButton.AutoSize = true;
-            this.RogueRadioButton.Location = new System.Drawing.Point(7, 72);
-            this.RogueRadioButton.Name = "RogueRadioButton";
-            this.RogueRadioButton.Size = new System.Drawing.Size(85, 28);
-            this.RogueRadioButton.TabIndex = 1;
-            this.RogueRadioButton.TabStop = true;
-            this.RogueRadioButton.Text = "Rogue";
-            this.RogueRadioButton.UseVisualStyleBackColor = true;
+            this.CultistRadioButton.AutoSize = true;
+            this.CultistRadioButton.Location = new System.Drawing.Point(6, 148);
+            this.CultistRadioButton.Name = "CultistRadioButton";
+            this.CultistRadioButton.Size = new System.Drawing.Size(77, 28);
+            this.CultistRadioButton.TabIndex = 3;
+            this.CultistRadioButton.TabStop = true;
+            this.CultistRadioButton.Text = "Cultist";
+            this.CultistRadioButton.UseVisualStyleBackColor = true;
             // 
             // MagickerRadioButton
             // 
@@ -95,16 +85,27 @@
             this.MagickerRadioButton.Text = "Magicker";
             this.MagickerRadioButton.UseVisualStyleBackColor = true;
             // 
-            // CultistRadioButton
+            // RogueRadioButton
             // 
-            this.CultistRadioButton.AutoSize = true;
-            this.CultistRadioButton.Location = new System.Drawing.Point(6, 148);
-            this.CultistRadioButton.Name = "CultistRadioButton";
-            this.CultistRadioButton.Size = new System.Drawing.Size(77, 28);
-            this.CultistRadioButton.TabIndex = 3;
-            this.CultistRadioButton.TabStop = true;
-            this.CultistRadioButton.Text = "Cultist";
-            this.CultistRadioButton.UseVisualStyleBackColor = true;
+            this.RogueRadioButton.AutoSize = true;
+            this.RogueRadioButton.Location = new System.Drawing.Point(7, 72);
+            this.RogueRadioButton.Name = "RogueRadioButton";
+            this.RogueRadioButton.Size = new System.Drawing.Size(85, 28);
+            this.RogueRadioButton.TabIndex = 1;
+            this.RogueRadioButton.TabStop = true;
+            this.RogueRadioButton.Text = "Rogue";
+            this.RogueRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // SoldierRadioButton
+            // 
+            this.SoldierRadioButton.AutoSize = true;
+            this.SoldierRadioButton.Location = new System.Drawing.Point(7, 36);
+            this.SoldierRadioButton.Name = "SoldierRadioButton";
+            this.SoldierRadioButton.Size = new System.Drawing.Size(87, 28);
+            this.SoldierRadioButton.TabIndex = 0;
+            this.SoldierRadioButton.TabStop = true;
+            this.SoldierRadioButton.Text = "Soldier";
+            this.SoldierRadioButton.UseVisualStyleBackColor = true;
             // 
             // HealthPointsLabel
             // 

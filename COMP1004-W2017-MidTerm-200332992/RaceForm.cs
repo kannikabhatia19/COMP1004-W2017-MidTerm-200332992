@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -63,6 +64,7 @@ namespace COMP1004_W2017_MidTerm_200332992
         }
 
         private void _storePointBeforeChange() {
+            //Debug.WriteLine((PreviousForm.Str).ToString());
             _characterScoreBefore.Add("Str", PreviousForm.Str);
             _characterScoreBefore.Add("Dex", PreviousForm.Dex);
             _characterScoreBefore.Add("End", PreviousForm.End);
