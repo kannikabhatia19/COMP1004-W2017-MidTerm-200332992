@@ -35,6 +35,7 @@
             this.RogueRadioButton = new System.Windows.Forms.RadioButton();
             this.SoldierRadioButton = new System.Windows.Forms.RadioButton();
             this.HealthPointsLabel = new System.Windows.Forms.Label();
+            this.HealthPointDisplayLabel = new System.Windows.Forms.Label();
             this.JobGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +74,7 @@
             this.CultistRadioButton.TabStop = true;
             this.CultistRadioButton.Text = "Cultist";
             this.CultistRadioButton.UseVisualStyleBackColor = true;
+            this.CultistRadioButton.Click += new System.EventHandler(this._healthPointCalculation);
             // 
             // MagickerRadioButton
             // 
@@ -84,6 +86,7 @@
             this.MagickerRadioButton.TabStop = true;
             this.MagickerRadioButton.Text = "Magicker";
             this.MagickerRadioButton.UseVisualStyleBackColor = true;
+            this.MagickerRadioButton.Click += new System.EventHandler(this._healthPointCalculation);
             // 
             // RogueRadioButton
             // 
@@ -95,6 +98,7 @@
             this.RogueRadioButton.TabStop = true;
             this.RogueRadioButton.Text = "Rogue";
             this.RogueRadioButton.UseVisualStyleBackColor = true;
+            this.RogueRadioButton.Click += new System.EventHandler(this._healthPointCalculation);
             // 
             // SoldierRadioButton
             // 
@@ -106,21 +110,33 @@
             this.SoldierRadioButton.TabStop = true;
             this.SoldierRadioButton.Text = "Soldier";
             this.SoldierRadioButton.UseVisualStyleBackColor = true;
+            this.SoldierRadioButton.Click += new System.EventHandler(this._healthPointCalculation);
             // 
             // HealthPointsLabel
             // 
             this.HealthPointsLabel.AutoSize = true;
             this.HealthPointsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HealthPointsLabel.Location = new System.Drawing.Point(309, 141);
+            this.HealthPointsLabel.Location = new System.Drawing.Point(295, 135);
             this.HealthPointsLabel.Name = "HealthPointsLabel";
             this.HealthPointsLabel.Size = new System.Drawing.Size(219, 24);
             this.HealthPointsLabel.TabIndex = 5;
             this.HealthPointsLabel.Text = "Character\'s Health Points";
             // 
+            // HealthPointDisplayLabel
+            // 
+            this.HealthPointDisplayLabel.AutoSize = true;
+            this.HealthPointDisplayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HealthPointDisplayLabel.Location = new System.Drawing.Point(535, 135);
+            this.HealthPointDisplayLabel.Name = "HealthPointDisplayLabel";
+            this.HealthPointDisplayLabel.Size = new System.Drawing.Size(60, 24);
+            this.HealthPointDisplayLabel.TabIndex = 6;
+            this.HealthPointDisplayLabel.Text = "label1";
+            // 
             // JobForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(641, 508);
+            this.Controls.Add(this.HealthPointDisplayLabel);
             this.Controls.Add(this.HealthPointsLabel);
             this.Controls.Add(this.JobGroupBox);
             this.Controls.Add(this.NextButton);
@@ -128,6 +144,7 @@
             this.Name = "JobForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select the Character\'s Job";
+            this.Load += new System.EventHandler(this.JobForm_Load);
             this.JobGroupBox.ResumeLayout(false);
             this.JobGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -144,5 +161,6 @@
         private System.Windows.Forms.RadioButton RogueRadioButton;
         private System.Windows.Forms.RadioButton SoldierRadioButton;
         private System.Windows.Forms.Label HealthPointsLabel;
+        private System.Windows.Forms.Label HealthPointDisplayLabel;
     }
 }

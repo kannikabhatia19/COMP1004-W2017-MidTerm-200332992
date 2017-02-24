@@ -17,14 +17,14 @@
   <Class Name="COMP1004_W2017_MidTerm_200332992.JobForm">
     <Position X="4" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAAAAAAGAAAQAAAACQAAAiAAARAAAAADAAQAAAAAA=</HashCode>
+      <HashCode>gAAAAAAAQGAAAYAAAACQEAAiAAARAAAAAHAAYAAAAAA=</HashCode>
       <FileName>JobForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="COMP1004_W2017_MidTerm_200332992.FinalForm">
     <Position X="6" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAQAAAACAAAACAAAAAAAAABAAAAAAAAA=</HashCode>
+      <HashCode>BACRBDggAiEwiQAiAIqLIBACgxABAYABMjgARAAwAAA=</HashCode>
       <FileName>FinalForm.cs</FileName>
     </TypeIdentifier>
   </Class>
