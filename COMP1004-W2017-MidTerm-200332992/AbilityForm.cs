@@ -25,8 +25,6 @@ namespace COMP1004_W2017_MidTerm_200332992
         private int _cha;
 
         //PROPERTIES============================================================
-
-
         public AbilityForm()
         {
             InitializeComponent();
@@ -216,5 +214,6 @@ namespace COMP1004_W2017_MidTerm_200332992
             raceForm.Show();
             this.Hide();
         }
+        
     }
 }

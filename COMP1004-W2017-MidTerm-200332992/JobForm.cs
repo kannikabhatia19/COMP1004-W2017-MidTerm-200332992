@@ -14,6 +14,7 @@ namespace COMP1004_W2017_MidTerm_200332992
     {
         private RaceForm _previousForm;
         private int _healthPoints;
+        private string _job;
         
         public RaceForm PreviousForm
         {
@@ -40,6 +41,19 @@ namespace COMP1004_W2017_MidTerm_200332992
             }
         }
 
+        public string Job
+        {
+            get
+            {
+                return _job;
+            }
+
+            set
+            {
+                _job = value;
+            }
+        }
+
         public JobForm()
         {
             InitializeComponent();
@@ -54,9 +68,9 @@ namespace COMP1004_W2017_MidTerm_200332992
         }
 
         private void _healthPointCalculation(object sender, EventArgs e) {
-            String job = (sender as RadioButton).Text;
+            this.Job = (sender as RadioButton).Text;
             
-            switch (job) {
+            switch (this.Job) {
 
                 case "Soldier":
                     HealthPoints = 30 + PreviousForm.PreviousForm.End;

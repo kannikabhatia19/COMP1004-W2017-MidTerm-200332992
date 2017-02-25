@@ -17,12 +17,13 @@ namespace COMP1004_W2017_MidTerm_200332992
         private Dictionary<string, int> _scoreAfter = new Dictionary<string, int>();
         private int _racialBonus;
         private AbilityForm _previousForm;
+        private string _race;
 
         public RaceForm()
         {
             InitializeComponent();
         }
-
+        
         public int RacialBonus
         {
             get
@@ -48,6 +49,20 @@ namespace COMP1004_W2017_MidTerm_200332992
                 _previousForm = (AbilityForm)value;
             }
         }
+
+        public string Race
+        {
+            get
+            {
+                return _race;
+            }
+
+            set
+            {
+                _race = value;
+            }
+        }
+
         private void _clearStorePoint()
         {
             for (int i = 0; i < _scoreAfter.Count; i++)
@@ -65,15 +80,6 @@ namespace COMP1004_W2017_MidTerm_200332992
             _scoreBefore["Intt"] = PreviousForm.Intt;
             _scoreBefore["Per"] = PreviousForm.Per;
             _scoreBefore["Cha"] = PreviousForm.Cha;
-        }
-        private void _storePointAfterChange()
-        {
-            _scoreAfter["Str"] = PreviousForm.Str;
-            _scoreAfter["Dex"] = PreviousForm.Dex;
-            _scoreAfter["End"] = PreviousForm.End;
-            _scoreAfter["Intt"] = PreviousForm.Intt;
-            _scoreAfter["Per"] = PreviousForm.Per;
-            _scoreAfter["Cha"] = PreviousForm.Cha;
         }
         private void _initializeScore() {
             _scoreBefore.Add("Str", 0);
@@ -107,10 +113,10 @@ namespace COMP1004_W2017_MidTerm_200332992
         private void _radioButton_Click(object sender, EventArgs e)
         {
 
-            String radioSelected = (sender as RadioButton).Text.ToString();
+            this.Race = (sender as RadioButton).Text.ToString();
             _clearStorePoint();
 
-            switch (radioSelected)
+            switch (this.Race)
             {
                 case "Human":
                     CharacterPictureBox.Image = Properties.Resources.M_Human1;
@@ -149,7 +155,6 @@ namespace COMP1004_W2017_MidTerm_200332992
                     _scoreAfter["Cha"] = _scoreBefore["Cha"];
                     break;
             }
-            _storePointAfterChange();
             _calculateRacialBonus();
         }
         
