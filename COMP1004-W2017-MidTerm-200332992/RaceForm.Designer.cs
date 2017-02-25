@@ -155,6 +155,7 @@
             this.Name = "RaceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Character Race";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RaceForm_FormClosing);
             this.Load += new System.EventHandler(this.RaceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPictureBox)).EndInit();
             this.RaceGroupBox.ResumeLayout(false);

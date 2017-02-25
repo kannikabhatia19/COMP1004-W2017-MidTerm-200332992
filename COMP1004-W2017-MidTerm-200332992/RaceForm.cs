@@ -9,21 +9,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * App Name: Character Generator
+ * Author's Name: Kannika Minnie Bhatia
+ * App Creation Date: 24 Febuary 2017
+ * Student ID: 200332992
+ */
+
 namespace COMP1004_W2017_MidTerm_200332992
 {
     public partial class RaceForm : Form
     {
+        //PRIVATE INSTANCE VARIABLES=============================================
         private Dictionary<string, int> _scoreBefore = new Dictionary<string, int>();
         private Dictionary<string, int> _scoreAfter = new Dictionary<string, int>();
         private int _racialBonus;
         private AbilityForm _previousForm;
         private string _race;
 
+        //CONSTRUCTOR===========================================================
         public RaceForm()
         {
             InitializeComponent();
         }
-        
+
+        //PROPERTIES============================================================
         public int RacialBonus
         {
             get
@@ -80,6 +90,15 @@ namespace COMP1004_W2017_MidTerm_200332992
             _scoreBefore["Intt"] = PreviousForm.Intt;
             _scoreBefore["Per"] = PreviousForm.Per;
             _scoreBefore["Cha"] = PreviousForm.Cha;
+        }
+
+        private void _storePointAfterChange() {
+            PreviousForm.Str = _scoreAfter["Str"];
+            PreviousForm.Dex = _scoreAfter["Dex"];
+            PreviousForm.End = _scoreAfter["End"];
+            PreviousForm.Intt = _scoreAfter["Intt"];
+            PreviousForm.Per = _scoreAfter["Per"];
+            PreviousForm.Cha = _scoreAfter["Cha"];
         }
         private void _initializeScore() {
             _scoreBefore.Add("Str", 0);
@@ -162,6 +181,7 @@ namespace COMP1004_W2017_MidTerm_200332992
         {
             JobForm jobForm = new JobForm();
             jobForm.PreviousForm = this;
+            _storePointAfterChange();
             this.Hide();
             jobForm.Show(); 
         }
@@ -170,6 +190,21 @@ namespace COMP1004_W2017_MidTerm_200332992
         {
             _initializeScore();
             _storePointBeforeChange();
+        }
+
+        private void RaceForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are You Sure?",
+                "Confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.OK)
+            {
+                this.PreviousForm.Close();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -8,20 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * App Name: Character Generator
+ * Author's Name: Kannika Minnie Bhatia
+ * App Creation Date: 24 Febuary 2017
+ * Student ID: 200332992
+ */
+
+
 namespace COMP1004_W2017_MidTerm_200332992
 {
     public partial class FinalForm : Form
     {
+        //PRIVATE INSTANCE VARIABLES=============================================
         private JobForm _previousForm;
         private FontFamily _fontName;
         private float _fontSize;
         private FontStyle _fontStyle;
 
+        //CONSTRUCTOR===========================================================
         public FinalForm()
         {
             InitializeComponent();
         }
 
+        //PROPERTIES============================================================
         public JobForm PreviousForm
         {
             get
@@ -99,7 +110,22 @@ namespace COMP1004_W2017_MidTerm_200332992
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            StringBuilder sbuilder = new StringBuilder();
+            sbuilder.Append("Name: " +NameTextBox.Text + "\n");
+            sbuilder.Append("Age: " + AgeTextBox.Text + "\n");
+            sbuilder.Append("Height: " + HeightTextBox.Text + "\n");
+            sbuilder.Append("Weight: "+ WeightTextBox.Text + "\n");
+            sbuilder.Append("Job: "+ JobTextBox.Text + "\n");
+            sbuilder.Append("Race: " + RaceTextBox.Text + "\n");
+            sbuilder.Append("Health Points: " + HealthPointsTextBox.Text + "\nAbilities");
+            sbuilder.Append("STR: " + STRTextBox.Text + "\n");
+            sbuilder.Append("DEX: " + DEXTextBox.Text + "\n");
+            sbuilder.Append("END: " + ENDTextBox.Text + "\n");
+            sbuilder.Append("INT: " + INTTextBox.Text + "\n");
+            sbuilder.Append("PER: " + PERTextBox.Text + "\n");
+            sbuilder.Append("CHA: " + CHATextBox.Text + "\n");
+            MessageBox.Show(sbuilder.ToString(), "Print Preview",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void FinalForm_Load(object sender, EventArgs e)
@@ -141,11 +167,10 @@ namespace COMP1004_W2017_MidTerm_200332992
 
             if (result == DialogResult.OK)
             {
-                this.PreviousForm.Close();
-                this.PreviousForm.PreviousForm.Close();
                 this.PreviousForm.PreviousForm.PreviousForm.Close();
             }
-            else {
+            else
+            {
                 e.Cancel = true;
             }
         }
